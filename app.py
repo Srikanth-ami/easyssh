@@ -87,7 +87,7 @@ def terminal():
     return render_template('terminal.html')  # Replace with your terminal template
 
 if __name__ == '__main__':
-    app.run(debug=True, host="0.0.0.0", port=5000)
+    app.run(debug=True, host="0.0.0.0", port=6000)
 
 # Implement a secure `is_valid_user` function using a database or other authentication mechanisms
 # to validate user credentials and access permissions. Avoid storing passwords in plain text.

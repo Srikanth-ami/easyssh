@@ -6,7 +6,7 @@ services:
     volumes:
       - $PWD:/app
     ports:
-      - "5000:5000"
+      - "6000:6000"
 #nfsvolume-flask:
  #   driver: local
   #  driver_opts:
