@@ -3,6 +3,8 @@
 ## Just Run all Command on Step by Steps 
 ### I am editing now readme file
 #### Requirement for this project
+    - OS: Ubuntu 22.x.x
+    - Installed: Docker & Docker Compose 
 ####
     git clone https://github.com/SumonPaul18/easyssh.git
     cd easyssh
