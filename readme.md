@@ -1,8 +1,8 @@
 #
 #
 ####
-    git clone https://github.com/SumonPaul18/easylinux.git
-    cd easylinux
+    git clone https://github.com/SumonPaul18/easyssh.git
+    cd easyssh
     docker compose up -d
 ####
     docker container prune
