@@ -5,6 +5,9 @@
 #### Requirement for this project
 - OS: Ubuntu 22.x.x
 - Installed: Docker & Docker Compose, git
+- Root access
+
+Copy and Paste on Terminal 
 ####
     git clone https://github.com/SumonPaul18/easyssh.git
     cd easyssh
