@@ -92,3 +92,4 @@ if __name__ == '__main__':
 # Implement a secure `is_valid_user` function using a database or other authentication mechanisms
 # to validate user credentials and access permissions. Avoid storing passwords in plain text.
 # Promraging by @sumonpaul
+# This is a Web Based SSH Terminal Application for Easy to Manage Linux
