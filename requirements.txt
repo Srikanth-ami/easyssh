@@ -1,0 +1,6 @@
+Flask
+paramiko
+pty
+termios
+threading
+websocket-client

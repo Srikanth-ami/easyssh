@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interactive SSH Terminal</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <h1>Interactive SSH Terminal</h1>
+    <form method="POST" action="/terminal">
+        <label for="ip_address">IP Address:</label>
+        <input type="text" id="ip_address" name="ip_address" required>
+
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit">Connect</button>
+    </form>
+
+    <div id="terminal"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/xterm@4.18.1/lib/xterm.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/websocket@1.0.3/dist/websocket.min.js"></script>
+    <script>
+        const terminal = new Terminal();
+        terminal.open(document.getElementById('terminal'));
+
+        const form = document.querySelector('form');
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const ipAddress = document.getElementById('ip_address').value;
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            const socket = new WebSocket('ws://localhost:5000/terminal'); // Replace with your WebSocket endpoint
+
+            socket.onopen = () => {
+                const data = {
+                    ip_address: ipAddress,
+                    username: username,
+                    password: password
+                };
+                socket.send(JSON.stringify(data));
+            };
+
+            socket.onmessage = (event) => {
+                const data = JSON.parse(event.data);
+                if (data.error) {
+                    console.error(data.error);
+                    terminal.write(data.error + '\r\n');
+                } else {
+                    terminal.write(data.message);
+                }
+            };
+
+            socket.onclose = () => {
+                console.log('WebSocket closed');
+            };
+        });
+    </script>
+</body>
+</html>
