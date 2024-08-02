@@ -1,7 +1,6 @@
 #
 # Build Web Based SSH Ternimal using python flask paramiko 
 ## Just Run all Command on Step by Steps 
-### I am editing now readme file
 #### Requirement for this project
 - OS: Ubuntu 22.x.x
 - Installed: Docker & Docker Compose, git
