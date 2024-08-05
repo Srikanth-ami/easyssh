@@ -19,7 +19,4 @@ Copy and Paste on Terminal
 ####
     docker compose ps
 ####
-    pip install -r requirements.txt
-####
 
-### Hello From Tithi
